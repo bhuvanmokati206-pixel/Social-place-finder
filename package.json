@@ -1,0 +1,16 @@
+{
+  "name": "social-places-backend",
+  "version": "1.0.0",
+  "description": "Backend API for a location-based social restaurant and places discovery app",
+  "type": "commonjs",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "NODE_ENV=development node src/server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

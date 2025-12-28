@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Places Finder – Results</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <div class="hero">
+          <div class="hero-card">
+            <div class="hero-title-pill">Nearby spots for you</div>
+            <p class="hero-subtitle">Here are fun places based on who you're with and your preferences.</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Keep same controls so app.js can read values; they can stay visually hidden -->
+      <section class="controls controls--hidden">
+        <div class="control-group">
+          <label for="contextSelect">Who are you with?</label>
+          <select id="contextSelect">
+            <option value="friends" selected>Friends</option>
+            <option value="family">Family</option>
+            <option value="date">Date</option>
+            <option value="solo">Solo</option>
+            <option value="colleagues">Colleagues</option>
+          </select>
+        </div>
+
+        <div class="control-row">
+          <div class="control-group">
+            <label for="budgetSelect">Budget</label>
+            <select id="budgetSelect">
+              <option value="">Any</option>
+              <option value="$">$</option>
+              <option value="$$">$$</option>
+              <option value="$$$">$$$</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="distanceSelect">Max distance</label>
+            <select id="distanceSelect">
+              <option value="">Any</option>
+              <option value="0.5">0.5 km</option>
+              <option value="1">1 km</option>
+              <option value="3">3 km</option>
+              <option value="5">5 km</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="moodInput">Mood or vibe</label>
+          <input id="moodInput" type="text" placeholder="e.g. cozy, lively, quiet" />
+        </div>
+      </section>
+
+      <section class="views-toggle">
+        <button id="listViewButton" class="view-button active">List</button>
+        <button id="mapViewButton" class="view-button">Map</button>
+      </section>
+
+      <main class="main-content">
+        <section id="listView" class="list-view"></section>
+        <section id="mapView" class="map-view hidden">
+          <p class="map-placeholder">Map view coming soon. For now, explore the list view.</p>
+        </section>
+      </main>
+
+      <section id="placeDetails" class="place-details hidden"></section>
+    </div>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Places Finder</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <nav class="top-nav">
+          <button class="nav-item nav-item--active">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+          </button>
+          <button class="nav-item">
+            <span class="nav-icon">🧭</span>
+            <span class="nav-label">Explore</span>
+          </button>
+          <button class="nav-item">
+            <span class="nav-icon">💾</span>
+            <span class="nav-label">Saved</span>
+          </button>
+          <button class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profile</span>
+          </button>
+        </nav>
+
+        <div class="hero">
+          <div class="hero-card">
+            <h1 class="hero-heading">Who are you with?</h1>
+
+            <div class="hero-context-row">
+              <button class="context-button context-circle active" data-context-option="friends">
+                <span class="context-circle-icon">👯‍♀️</span>
+                <span class="context-circle-label">Friends</span>
+              </button>
+              <button class="context-button context-circle" data-context-option="family">
+                <span class="context-circle-icon">👨‍👩‍👧</span>
+                <span class="context-circle-label">Family</span>
+              </button>
+              <button class="context-button context-circle" data-context-option="date">
+                <span class="context-circle-icon">❤️</span>
+                <span class="context-circle-label">Partner</span>
+              </button>
+              <button class="context-button context-circle" data-context-option="solo">
+                <span class="context-circle-icon">🧍</span>
+                <span class="context-circle-label">Solo</span>
+              </button>
+            </div>
+
+            <button id="discoverButton" class="primary-button hero-cta">
+              🍽️ Find Fun Activities
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hidden form controls used by app.js for building the API query -->
+      <section class="controls controls--hidden">
+        <div class="control-group">
+          <label for="contextSelect">Who are you with?</label>
+          <select id="contextSelect">
+            <option value="friends" selected>Friends</option>
+            <option value="family">Family</option>
+            <option value="date">Date</option>
+            <option value="solo">Solo</option>
+            <option value="colleagues">Colleagues</option>
+          </select>
+        </div>
+
+        <div class="control-row">
+          <div class="control-group">
+            <label for="budgetSelect">Budget</label>
+            <select id="budgetSelect">
+              <option value="">Any</option>
+              <option value="$">$</option>
+              <option value="$$">$$</option>
+              <option value="$$$">$$$</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="distanceSelect">Max distance</label>
+            <select id="distanceSelect">
+              <option value="">Any</option>
+              <option value="0.5">0.5 km</option>
+              <option value="1">1 km</option>
+              <option value="3">3 km</option>
+              <option value="5">5 km</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="moodInput">Mood or vibe</label>
+          <input id="moodInput" type="text" placeholder="e.g. cozy, lively, quiet" />
+        </div>
+      </section>
+
+      <section class="views-toggle">
+        <button id="listViewButton" class="view-button active">List</button>
+        <button id="mapViewButton" class="view-button">Map</button>
+      </section>
+
+      <main class="main-content">
+        <section id="listView" class="list-view"></section>
+        <section id="mapView" class="map-view hidden">
+          <p class="map-placeholder">Map view coming soon. For now, explore the list view.</p>
+        </section>
+      </main>
+
+      <section id="placeDetails" class="place-details hidden"></section>
+    </div>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

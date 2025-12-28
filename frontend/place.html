@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Places Finder – Place Details</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <div class="hero">
+          <div class="hero-card">
+            <div class="hero-title-pill">Place details</div>
+            <p class="hero-subtitle">See more about this spot and add your own private notes.</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <button class="secondary-button" onclick="window.history.length > 1 ? window.history.back() : window.location.href='results.html';">
+          ← Back to results
+        </button>
+
+        <!-- app.js will fill this based on ?id=... -->
+        <section id="placeDetails" class="place-details"></section>
+      </main>
+    </div>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
