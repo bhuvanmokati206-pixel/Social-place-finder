@@ -9,6 +9,10 @@
   <body>
     <div id="app">
       <header class="app-header">
+        <button class="profile-button">
+          <span class="profile-icon">👤</span>
+        </button>
+
         <div class="hero">
           <div class="hero-card">
             <div class="hero-title-pill">Place details</div>
@@ -25,6 +29,21 @@
         <!-- app.js will fill this based on ?id=... -->
         <section id="placeDetails" class="place-details"></section>
       </main>
+
+      <nav class="bottom-nav">
+        <button class="nav-item">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-label">Home</span>
+        </button>
+        <button class="nav-item">
+          <span class="nav-icon">🧭</span>
+          <span class="nav-label">Explore</span>
+        </button>
+        <button class="nav-item">
+          <span class="nav-icon">💾</span>
+          <span class="nav-label">Saved</span>
+        </button>
+      </nav>
     </div>
 
     <script src="./app.js" type="module"></script>

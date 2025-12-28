@@ -48,3 +48,8 @@ The app will be available at `http://0.0.0.0:5000` with cache control headers to
 - Login modal hidden after successful login on subsequent visits
 - Added cache control headers to prevent stale content
 - Configured server to bind to 0.0.0.0 for Replit compatibility
+- Removed map/list view toggle - only list view is shown
+- Restructured navigation:
+  - Profile button moved to top-right corner as circular button
+  - Home, Explore, and Saved moved to bottom navigation bar (fixed position)
+  - Applied to all pages (index, results, place details)

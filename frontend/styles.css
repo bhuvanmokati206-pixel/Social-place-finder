@@ -13,13 +13,44 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding: 1rem;
+  padding-bottom: 7rem;
 }
 
 .app-header {
   padding: 1rem 0 2rem;
+  position: relative;
 }
 
-.top-nav {
+.profile-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  border: 2px solid rgba(249, 115, 22, 0.8);
+  background: radial-gradient(circle at top, rgba(249, 115, 22, 0.18), transparent 60%),
+    #020617;
+  color: #f9fafb;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.15s ease, transform 0.08s ease;
+  box-shadow: 0 0 18px rgba(249, 115, 22, 0.7);
+}
+
+.profile-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.9);
+}
+
+.profile-icon {
+  font-size: 1.5rem;
+}
+
+.bottom-nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -27,7 +58,11 @@ body {
   border-radius: 1.5rem;
   background: linear-gradient(to right, #111827, #020617);
   border: 1px solid rgba(148, 163, 184, 0.25);
-  margin-bottom: 1.25rem;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  max-width: calc(100% - 2rem);
 }
 
 .nav-item {
@@ -52,6 +87,10 @@ body {
 
 .nav-item--active .nav-icon {
   text-shadow: 0 0 12px rgba(249, 115, 22, 0.8);
+}
+
+.nav-label {
+  display: block;
 }
 
 .hero {
@@ -169,7 +208,6 @@ body {
   gap: 0.75rem;
 }
 
-/* Hidden but present so app.js can still read values for filters */
 .controls--hidden {
   display: none;
 }
@@ -192,7 +230,8 @@ label {
 }
 
 select,
-input[type='text'] {
+input[type='text'],
+input[type='email'] {
   padding: 0.5rem 0.6rem;
   border-radius: 0.5rem;
   border: 1px solid rgba(148, 163, 184, 0.4);
@@ -201,7 +240,8 @@ input[type='text'] {
 }
 
 select:focus,
-input[type='text']:focus {
+input[type='text']:focus,
+input[type='email']:focus {
   outline: none;
   border-color: #38bdf8;
   box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.6);
@@ -225,28 +265,6 @@ input[type='text']:focus {
   filter: brightness(1.05);
   transform: translateY(-1px);
   box-shadow: 0 0 34px rgba(249, 115, 22, 0.85);
-}
-
-.views-toggle {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.view-button {
-  flex: 1;
-  padding: 0.5rem 0;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.4);
-  background-color: transparent;
-  color: #e5e7eb;
-  cursor: pointer;
-  font-size: 0.85rem;
-}
-
-.view-button.active {
-  background: rgba(15, 23, 42, 0.9);
-  border-color: #38bdf8;
 }
 
 .main-content {
@@ -317,20 +335,6 @@ input[type='text']:focus {
   color: #bbf7d0;
 }
 
-.map-view {
-  min-height: 200px;
-  padding: 0.75rem;
-  border-radius: 0.75rem;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px dashed rgba(148, 163, 184, 0.4);
-}
-
-.map-placeholder {
-  margin: 0;
-  color: #9ca3af;
-  font-size: 0.9rem;
-}
-
 .place-details {
   margin-top: 1rem;
   padding: 0.75rem;
@@ -379,7 +383,6 @@ input[type='text']:focus {
   cursor: pointer;
 }
 
-/* Circular context buttons for the cover page */
 .context-circle {
   width: 80px;
   height: 80px;
@@ -409,18 +412,6 @@ input[type='text']:focus {
 
 .hidden {
   display: none;
-}
-
-@media (min-width: 768px) {
-  .main-content {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 1rem;
-  }
-
-  .map-view {
-    min-height: 260px;
-  }
 }
 
 /* Login Modal Styles */
@@ -502,4 +493,12 @@ input[type='text']:focus {
 .login-button {
   width: 100%;
   margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1rem;
+  }
 }

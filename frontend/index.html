@@ -44,24 +44,9 @@
 
     <div id="app">
       <header class="app-header">
-        <nav class="top-nav">
-          <button class="nav-item nav-item--active">
-            <span class="nav-icon">🏠</span>
-            <span class="nav-label">Home</span>
-          </button>
-          <button class="nav-item">
-            <span class="nav-icon">🧭</span>
-            <span class="nav-label">Explore</span>
-          </button>
-          <button class="nav-item">
-            <span class="nav-icon">💾</span>
-            <span class="nav-label">Saved</span>
-          </button>
-          <button class="nav-item">
-            <span class="nav-icon">👤</span>
-            <span class="nav-label">Profile</span>
-          </button>
-        </nav>
+        <button class="profile-button">
+          <span class="profile-icon">👤</span>
+        </button>
 
         <div class="hero">
           <div class="hero-card">
@@ -140,6 +125,21 @@
       </main>
 
       <section id="placeDetails" class="place-details hidden"></section>
+
+      <nav class="bottom-nav">
+        <button class="nav-item nav-item--active">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-label">Home</span>
+        </button>
+        <button class="nav-item">
+          <span class="nav-icon">🧭</span>
+          <span class="nav-label">Explore</span>
+        </button>
+        <button class="nav-item">
+          <span class="nav-icon">💾</span>
+          <span class="nav-label">Saved</span>
+        </button>
+      </nav>
     </div>
 
     <script src="./app.js" type="module"></script>
