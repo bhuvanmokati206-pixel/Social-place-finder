@@ -1,5 +1,30 @@
 const API_BASE_URL = '/api'; // Change this if your backend is hosted elsewhere.
 
+function isLoggedIn() {
+  return localStorage.getItem('userEmail') && localStorage.getItem('userName');
+}
+
+function setupLoginForm() {
+  const loginModal = document.getElementById('loginModal');
+  const loginForm = document.getElementById('loginForm');
+  
+  if (!loginForm) return;
+  
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('nameInput').value.trim();
+    const email = document.getElementById('emailInput').value.trim();
+    
+    if (name && email) {
+      localStorage.setItem('userName', name);
+      localStorage.setItem('userEmail', email);
+      if (loginModal) {
+        loginModal.classList.add('hidden');
+      }
+    }
+  });
+}
+
 async function fetchNearbyPlaces() {
   const context = document.getElementById('contextSelect').value;
   const budget = document.getElementById('budgetSelect').value;
@@ -266,6 +291,19 @@ function setupDiscoverButton() {
 }
 
 function init() {
+  // Check login status and show/hide login modal
+  const loginModal = document.getElementById('loginModal');
+  if (isLoggedIn()) {
+    if (loginModal) {
+      loginModal.classList.add('hidden');
+    }
+  } else {
+    setupLoginForm();
+    if (loginModal) {
+      loginModal.classList.remove('hidden');
+    }
+  }
+  
   setupContextButtons();
   setupViewToggle();
   const isResultsPage = window.location.pathname.endsWith('results.html');
