@@ -247,26 +247,6 @@ function setupContextButtons() {
   });
 }
 
-function setupViewToggle() {
-  const listBtn = document.getElementById('listViewButton');
-  const mapBtn = document.getElementById('mapViewButton');
-  const listView = document.getElementById('listView');
-  const mapView = document.getElementById('mapView');
-
-  listBtn.addEventListener('click', () => {
-    listBtn.classList.add('active');
-    mapBtn.classList.remove('active');
-    listView.classList.remove('hidden');
-    mapView.classList.add('hidden');
-  });
-
-  mapBtn.addEventListener('click', () => {
-    mapBtn.classList.add('active');
-    listBtn.classList.remove('active');
-    listView.classList.add('hidden');
-    mapView.classList.remove('hidden');
-  });
-}
 
 function setupDiscoverButton() {
   const button = document.getElementById('discoverButton');
@@ -305,7 +285,6 @@ function init() {
   }
   
   setupContextButtons();
-  setupViewToggle();
   const isResultsPage = window.location.pathname.endsWith('results.html');
   const isPlacePage = window.location.pathname.endsWith('place.html');
 
