@@ -33,7 +33,8 @@ const testPlaces = [
     "context": "friends",
     "category": "restaurant",
     "budget_for_two": 1700,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/broadway/ambiance.jpg"]
   },
   {
     "id": "hyd_f_03",
