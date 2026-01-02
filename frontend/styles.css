@@ -318,6 +318,15 @@ input[type='email']:focus {
   flex-shrink: 0;
 }
 
+.place-image {
+  width: 72px;
+  height: 72px;
+  border-radius: 0.75rem;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
 .place-body {
   flex: 1;
   display: flex;

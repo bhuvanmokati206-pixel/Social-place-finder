@@ -96,8 +96,13 @@ function renderPlacesList(places) {
   for (const place of places) {
     const card = document.createElement('article');
     card.className = 'place-card';
+    const mainImage = place.images && place.images.length > 0 ? place.images[0] : null;
+    const imageHtml = mainImage 
+      ? `<div class="place-image" style="background-image: url('${mainImage}')"></div>`
+      : `<div class="place-image-placeholder"></div>`;
+
     card.innerHTML = `
-      <div class="place-image-placeholder"></div>
+      ${imageHtml}
       <div class="place-body">
         <div class="place-name">${place.name}</div>
         <div class="place-meta">
