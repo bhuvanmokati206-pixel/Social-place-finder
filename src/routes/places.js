@@ -215,6 +215,76 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 2200,
     "has_reels": false
+  },
+  {
+    "id": "hyd_s_01",
+    "name": "Cafe Niloufer",
+    "type": "Cafe",
+    "rating": 4.8,
+    "costRange": "$",
+    "distanceKm": 0.5,
+    "tags": ["solo", "authentic", "tea", "maska bun"],
+    "isOpen": true,
+    "context": "solo",
+    "category": "restaurant",
+    "budget_for_two": 300,
+    "has_reels": true
+  },
+  {
+    "id": "hyd_s_02",
+    "name": "Third Wave Coffee",
+    "type": "Cafe",
+    "rating": 4.5,
+    "costRange": "$",
+    "distanceKm": 1.1,
+    "tags": ["solo", "work friendly", "coffee"],
+    "isOpen": true,
+    "context": "solo",
+    "category": "restaurant",
+    "budget_for_two": 400,
+    "has_reels": false
+  },
+  {
+    "id": "hyd_s_03",
+    "name": "Conçu",
+    "type": "Bakery & Desserts",
+    "rating": 4.7,
+    "costRange": "$$",
+    "distanceKm": 2.2,
+    "tags": ["solo", "elegant", "desserts"],
+    "isOpen": true,
+    "context": "solo",
+    "category": "restaurant",
+    "budget_for_two": 700,
+    "has_reels": true
+  },
+  {
+    "id": "hyd_s_04",
+    "name": "Taaza Kitchen",
+    "type": "Healthy Food",
+    "rating": 4.6,
+    "costRange": "$",
+    "distanceKm": 0.8,
+    "tags": ["solo", "quick bite", "healthy"],
+    "isOpen": true,
+    "context": "solo",
+    "category": "restaurant",
+    "budget_for_two": 500,
+    "has_reels": false
+  },
+  {
+    "id": "hyd_s_05",
+    "name": "Subbayya Gari Hotel",
+    "type": "Andhra Meals",
+    "rating": 4.4,
+    "costRange": "$",
+    "distanceKm": 1.5,
+    "tags": ["solo", "traditional", "thali"],
+    "isOpen": true,
+    "context": "solo",
+    "category": "restaurant",
+    "budget_for_two": 450,
+    "has_reels": true
   }
 ];
 
