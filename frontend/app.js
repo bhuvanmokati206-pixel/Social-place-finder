@@ -17,7 +17,7 @@ async function loadGoogleMaps() {
 }
 
 function isLoggedIn() {
-  return localStorage.getItem('userEmail') && localStorage.getItem('userName');
+  return localStorage.getItem('userPassword') && localStorage.getItem('userName');
 }
 
 function setupLoginForm() {
@@ -29,11 +29,11 @@ function setupLoginForm() {
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('nameInput').value.trim();
-    const email = document.getElementById('emailInput').value.trim();
+    const password = document.getElementById('passwordInput').value.trim();
     
-    if (name && email) {
+    if (name && password) {
       localStorage.setItem('userName', name);
-      localStorage.setItem('userEmail', email);
+      localStorage.setItem('userPassword', password);
       if (loginModal) {
         loginModal.classList.add('hidden');
       }
