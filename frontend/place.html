@@ -9,6 +9,9 @@
   <body>
     <div id="app">
       <header class="app-header">
+        <a href="results.html" class="back-button">
+          ← Back
+        </a>
         <button class="profile-button">
           <span class="profile-icon">👤</span>
         </button>
@@ -22,10 +25,6 @@
       </header>
 
       <main class="main-content">
-        <button class="secondary-button" onclick="window.history.length > 1 ? window.history.back() : window.location.href='results.html';">
-          ← Back to results
-        </button>
-
         <!-- app.js will fill this based on ?id=... -->
         <section id="placeDetails" class="place-details"></section>
       </main>

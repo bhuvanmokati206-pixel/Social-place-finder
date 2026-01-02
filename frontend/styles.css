@@ -401,6 +401,31 @@ input[type='email']:focus {
   margin-top: 0.5rem;
 }
 
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background-color: rgba(15, 23, 42, 0.8);
+  color: #e5e7eb;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+}
+
+.back-button:hover {
+  border-color: #38bdf8;
+  background-color: rgba(30, 64, 175, 0.4);
+  transform: translateX(-2px);
+}
+
 .secondary-button {
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
