@@ -25,6 +25,12 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
+app.get('/api/config', (req, res) => {
+  res.json({
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY
+  });
+});
+
 app.listen(PORT, HOST, () => {
   console.log(`Social places API listening on http://${HOST}:${PORT}`);
 });

@@ -1,5 +1,21 @@
 const API_BASE_URL = '/api'; // Change this if your backend is hosted elsewhere.
 
+async function loadGoogleMaps() {
+  try {
+    const res = await fetch(`${API_BASE_URL}/config`);
+    const config = await res.json();
+    if (config.googleMapsApiKey) {
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${config.googleMapsApiKey}&libraries=places`;
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  } catch (e) {
+    console.error('Failed to load Google Maps config', e);
+  }
+}
+
 function isLoggedIn() {
   return localStorage.getItem('userEmail') && localStorage.getItem('userName');
 }
@@ -271,6 +287,7 @@ function setupDiscoverButton() {
 }
 
 function init() {
+  loadGoogleMaps();
   // Check login status and show/hide login modal
   const loginModal = document.getElementById('loginModal');
   if (isLoggedIn()) {
