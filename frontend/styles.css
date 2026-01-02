@@ -432,11 +432,13 @@ input[type='email']:focus {
 }
 
 .place-details {
-  margin-top: 1rem;
-  padding: 0.75rem;
-  border-radius: 0.75rem;
+  margin: 1rem auto 0;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
   background: rgba(15, 23, 42, 0.9);
   border: 1px solid rgba(148, 163, 184, 0.3);
+  max-width: 600px;
+  width: 100%;
 }
 
 .place-details h2 {
