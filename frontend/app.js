@@ -249,7 +249,7 @@ function getUserId() {
 }
 
 function setupContextButtons() {
-  const buttons = document.querySelectorAll('.context-button');
+  const buttons = document.querySelectorAll('.context-card');
   const contextSelect = document.getElementById('contextSelect');
   if (!buttons.length || !contextSelect) return;
 

@@ -49,32 +49,38 @@
         </button>
 
         <div class="hero">
-          <div class="hero-card">
-            <h1 class="hero-heading">Who are you with?</h1>
+          <h1 class="hero-heading-new">Who are you <br/>with today?</h1>
 
-            <div class="hero-context-row">
-              <button class="context-button context-circle active" data-context-option="friends">
-                <span class="context-circle-icon">👯‍♀️</span>
-                <span class="context-circle-label">Friends</span>
-              </button>
-              <button class="context-button context-circle" data-context-option="family">
-                <span class="context-circle-icon">👨‍👩‍👧</span>
-                <span class="context-circle-label">Family</span>
-              </button>
-              <button class="context-button context-circle" data-context-option="date">
-                <span class="context-circle-icon">❤️</span>
-                <span class="context-circle-label">Partner</span>
-              </button>
-              <button class="context-button context-circle" data-context-option="solo">
-                <span class="context-circle-icon">🧍</span>
-                <span class="context-circle-label">Solo</span>
-              </button>
-            </div>
-
-            <button id="discoverButton" class="primary-button hero-cta">
-              🍽️ Find Fun Activities
+          <div class="hero-context-grid">
+            <button class="context-card active" data-context-option="friends">
+              <div class="context-icon-wrapper" style="background-color: #fff1e6;">
+                <span class="context-icon" style="color: #f97316;">👥</span>
+              </div>
+              <span class="context-label">Friends</span>
+            </button>
+            <button class="context-card" data-context-option="family">
+              <div class="context-icon-wrapper" style="background-color: #ffe4e6;">
+                <span class="context-icon" style="color: #e11d48;">❤️</span>
+              </div>
+              <span class="context-label">Family</span>
+            </button>
+            <button class="context-card" data-context-option="date">
+              <div class="context-icon-wrapper" style="background-color: #fce7f3;">
+                <span class="context-icon" style="color: #be185d;">☕</span>
+              </div>
+              <span class="context-label">Date</span>
+            </button>
+            <button class="context-card" data-context-option="solo">
+              <div class="context-icon-wrapper" style="background-color: #e0f2fe;">
+                <span class="context-icon" style="color: #0369a1;">👤</span>
+              </div>
+              <span class="context-label">Solo</span>
             </button>
           </div>
+
+          <button id="discoverButton" class="primary-button hero-cta-new">
+            🍽️ Find Fun Activities
+          </button>
         </div>
       </header>
 
