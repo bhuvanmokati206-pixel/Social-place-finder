@@ -48,7 +48,8 @@ const testPlaces = [
     "context": "friends",
     "category": "restaurant",
     "budget_for_two": 1600,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/stock/over_the_moon_brew_c_c85c4a84.jpg"]
   },
   {
     "id": "hyd_f_04",
@@ -62,7 +63,8 @@ const testPlaces = [
     "context": "friends",
     "category": "restaurant",
     "budget_for_two": 1500,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/stock/36_downtown_brew_pub_4ef9f9aa.jpg"]
   },
   {
     "id": "hyd_f_05",
@@ -76,7 +78,8 @@ const testPlaces = [
     "context": "friends",
     "category": "restaurant",
     "budget_for_two": 600,
-    "has_reels": false
+    "has_reels": false,
+    "images": ["/assets/places/stock/heart_cup_coffee_hyd_0bd57207.jpg"]
   },
   {
     "id": "hyd_fam_01",
@@ -105,7 +108,8 @@ const testPlaces = [
     "context": "family",
     "category": "restaurant",
     "budget_for_two": 800,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/stock/bawarchi_biryani_hyd_0b91d711.jpg"]
   },
   {
     "id": "hyd_fam_03",
@@ -119,7 +123,8 @@ const testPlaces = [
     "context": "family",
     "category": "restaurant",
     "budget_for_two": 500,
-    "has_reels": false
+    "has_reels": false,
+    "images": ["/assets/places/stock/chutneys_hyderabad_s_030cdfdc.jpg"]
   },
   {
     "id": "hyd_fam_04",
@@ -133,7 +138,8 @@ const testPlaces = [
     "context": "family",
     "category": "restaurant",
     "budget_for_two": 1600,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/stock/barbeque_nation_hyde_98e2567c.jpg"]
   },
   {
     "id": "hyd_fam_05",
@@ -147,7 +153,8 @@ const testPlaces = [
     "context": "family",
     "category": "restaurant",
     "budget_for_two": 1400,
-    "has_reels": false
+    "has_reels": false,
+    "images": ["/assets/places/stock/the_glass_onion_hyde_d92743a4.jpg"]
   },
   {
     "id": "hyd_d_01",
@@ -161,7 +168,8 @@ const testPlaces = [
     "context": "date",
     "category": "restaurant",
     "budget_for_two": 2000,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/stock/exotica_hyderabad_ro_56c32c7e.jpg"]
   },
   {
     "id": "hyd_d_02",
@@ -175,7 +183,8 @@ const testPlaces = [
     "context": "date",
     "category": "restaurant",
     "budget_for_two": 2500,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/stock/olive_bistro_hyderab_ad9362f5.jpg"]
   },
   {
     "id": "hyd_d_03",
@@ -189,7 +198,8 @@ const testPlaces = [
     "context": "date",
     "category": "restaurant",
     "budget_for_two": 800,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/stock/roastery_coffee_hous_83398faa.jpg"]
   },
   {
     "id": "hyd_d_04",
@@ -203,7 +213,8 @@ const testPlaces = [
     "context": "date",
     "category": "restaurant",
     "budget_for_two": 1800,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/stock/farzi_cafe_hyderabad_c3dcfecd.jpg"]
   },
   {
     "id": "hyd_d_05",
@@ -217,7 +228,8 @@ const testPlaces = [
     "context": "date",
     "category": "restaurant",
     "budget_for_two": 2200,
-    "has_reels": false
+    "has_reels": false,
+    "images": ["/assets/places/stock/the_glass_onion_hyde_d92743a4.jpg"]
   },
   {
     "id": "hyd_s_01",
@@ -231,7 +243,8 @@ const testPlaces = [
     "context": "solo",
     "category": "restaurant",
     "budget_for_two": 300,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/stock/cafe_niloufer_hydera_a35c3ae7.jpg"]
   },
   {
     "id": "hyd_s_02",
@@ -245,7 +258,8 @@ const testPlaces = [
     "context": "solo",
     "category": "restaurant",
     "budget_for_two": 400,
-    "has_reels": false
+    "has_reels": false,
+    "images": ["/assets/places/stock/third_wave_coffee_hy_20c3aa7b.jpg"]
   },
   {
     "id": "hyd_s_03",
@@ -259,7 +273,8 @@ const testPlaces = [
     "context": "solo",
     "category": "restaurant",
     "budget_for_two": 700,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/stock/conçu_hyderabad_dess_280c6d57.jpg"]
   },
   {
     "id": "hyd_s_04",
@@ -273,7 +288,8 @@ const testPlaces = [
     "context": "solo",
     "category": "restaurant",
     "budget_for_two": 500,
-    "has_reels": false
+    "has_reels": false,
+    "images": ["/assets/places/stock/taaza_kitchen_hydera_58defc34.jpg"]
   },
   {
     "id": "hyd_s_05",
@@ -287,7 +303,8 @@ const testPlaces = [
     "context": "solo",
     "category": "restaurant",
     "budget_for_two": 450,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/stock/subbayya_gari_hotel__e4291505.jpg"]
   }
 ];
 
