@@ -89,7 +89,8 @@ const testPlaces = [
     "context": "family",
     "category": "restaurant",
     "budget_for_two": 700,
-    "has_reels": true
+    "has_reels": true,
+    "images": ["/assets/places/paradise/biryani.jpg"]
   },
   {
     "id": "hyd_fam_02",
