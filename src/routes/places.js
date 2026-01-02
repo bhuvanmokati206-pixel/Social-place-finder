@@ -145,6 +145,76 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 1400,
     "has_reels": false
+  },
+  {
+    "id": "hyd_d_01",
+    "name": "Exotica",
+    "type": "Rooftop Dining",
+    "rating": 4.6,
+    "costRange": "$$$",
+    "distanceKm": 1.9,
+    "tags": ["date", "romantic", "rooftop"],
+    "isOpen": true,
+    "context": "date",
+    "category": "restaurant",
+    "budget_for_two": 2000,
+    "has_reels": true
+  },
+  {
+    "id": "hyd_d_02",
+    "name": "Olive Bistro",
+    "type": "Mediterranean",
+    "rating": 4.7,
+    "costRange": "$$$",
+    "distanceKm": 2.4,
+    "tags": ["date", "romantic", "view"],
+    "isOpen": true,
+    "context": "date",
+    "category": "restaurant",
+    "budget_for_two": 2500,
+    "has_reels": true
+  },
+  {
+    "id": "hyd_d_03",
+    "name": "Roastery Coffee House",
+    "type": "Cafe",
+    "rating": 4.8,
+    "costRange": "$$",
+    "distanceKm": 0.5,
+    "tags": ["date", "cozy", "specialty coffee"],
+    "isOpen": true,
+    "context": "date",
+    "category": "restaurant",
+    "budget_for_two": 800,
+    "has_reels": true
+  },
+  {
+    "id": "hyd_d_04",
+    "name": "Farzi Cafe",
+    "type": "Modern Indian",
+    "rating": 4.5,
+    "costRange": "$$$",
+    "distanceKm": 1.3,
+    "tags": ["date", "experimental", "lively"],
+    "isOpen": true,
+    "context": "date",
+    "category": "restaurant",
+    "budget_for_two": 1800,
+    "has_reels": true
+  },
+  {
+    "id": "hyd_d_05",
+    "name": "The Glass Onion",
+    "type": "Fine Dining",
+    "rating": 4.4,
+    "costRange": "$$$",
+    "distanceKm": 3.2,
+    "tags": ["date", "elegant", "upscale"],
+    "isOpen": true,
+    "context": "date",
+    "category": "restaurant",
+    "budget_for_two": 2200,
+    "has_reels": false
   }
 ];
 
