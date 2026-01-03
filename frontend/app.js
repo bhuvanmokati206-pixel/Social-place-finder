@@ -51,8 +51,9 @@ async function fetchNearbyPlaces() {
   try {
     coords = await getCurrentPosition();
   } catch (e) {
-    console.warn('Unable to get geolocation, falling back to mock coordinates.', e);
-    coords = { latitude: 0, longitude: 0 };
+    console.warn('Unable to get geolocation, falling back to Hyderabad center.', e);
+    // Fallback to Hyderabad city center
+    coords = { latitude: 17.3850, longitude: 78.4867 };
   }
 
   const params = new URLSearchParams();

@@ -19,7 +19,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 1800,
     "has_reels": true,
-    "images": ["/assets/places/prost/image1.jpg", "/assets/places/prost/image2.jpg"]
+    "images": ["/assets/places/prost/image1.jpg", "/assets/places/prost/image2.jpg"],
+    "location": { "lat": 17.4246, "lng": 78.4124 }
   },
   {
     "id": "hyd_f_02",
@@ -34,7 +35,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 1700,
     "has_reels": true,
-    "images": ["/assets/places/broadway/ambiance.jpg"]
+    "images": ["/assets/places/broadway/ambiance.jpg"],
+    "location": { "lat": 17.4325, "lng": 78.4071 }
   },
   {
     "id": "hyd_f_03",
@@ -49,7 +51,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 1600,
     "has_reels": true,
-    "images": ["/assets/places/stock/over_the_moon_brew_c_c85c4a84.jpg"]
+    "images": ["/assets/places/stock/over_the_moon_brew_c_c85c4a84.jpg"],
+    "location": { "lat": 17.4396, "lng": 78.3964 }
   },
   {
     "id": "hyd_f_04",
@@ -64,7 +67,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 1500,
     "has_reels": true,
-    "images": ["/assets/places/stock/36_downtown_brew_pub_4ef9f9aa.jpg"]
+    "images": ["/assets/places/stock/36_downtown_brew_pub_4ef9f9aa.jpg"],
+    "location": { "lat": 17.4298, "lng": 78.4063 }
   },
   {
     "id": "hyd_f_05",
@@ -79,7 +83,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 600,
     "has_reels": false,
-    "images": ["/assets/places/stock/heart_cup_coffee_hyd_0bd57207.jpg"]
+    "images": ["/assets/places/stock/heart_cup_coffee_hyd_0bd57207.jpg"],
+    "location": { "lat": 17.4485, "lng": 78.3908 }
   },
   {
     "id": "hyd_fam_01",
@@ -94,7 +99,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 700,
     "has_reels": true,
-    "images": ["/assets/places/paradise/biryani.jpg"]
+    "images": ["/assets/places/paradise/biryani.jpg"],
+    "location": { "lat": 17.4447, "lng": 78.4983 }
   },
   {
     "id": "hyd_fam_02",
@@ -109,7 +115,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 800,
     "has_reels": true,
-    "images": ["/assets/places/stock/bawarchi_biryani_hyd_0b91d711.jpg"]
+    "images": ["/assets/places/stock/bawarchi_biryani_hyd_0b91d711.jpg"],
+    "location": { "lat": 17.4031, "lng": 78.4882 }
   },
   {
     "id": "hyd_fam_03",
@@ -124,7 +131,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 500,
     "has_reels": false,
-    "images": ["/assets/places/stock/chutneys_hyderabad_s_030cdfdc.jpg"]
+    "images": ["/assets/places/stock/chutneys_hyderabad_s_030cdfdc.jpg"],
+    "location": { "lat": 17.4262, "lng": 78.4521 }
   },
   {
     "id": "hyd_fam_04",
@@ -139,7 +147,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 1600,
     "has_reels": true,
-    "images": ["/assets/places/stock/barbeque_nation_hyde_98e2567c.jpg"]
+    "images": ["/assets/places/stock/barbeque_nation_hyde_98e2567c.jpg"],
+    "location": { "lat": 17.4194, "lng": 78.4485 }
   },
   {
     "id": "hyd_fam_05",
@@ -154,7 +163,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 1400,
     "has_reels": false,
-    "images": ["/assets/places/stock/the_glass_onion_hyde_d92743a4.jpg"]
+    "images": ["/assets/places/stock/the_glass_onion_hyde_d92743a4.jpg"],
+    "location": { "lat": 17.4328, "lng": 78.4571 }
   },
   {
     "id": "hyd_d_01",
@@ -169,7 +179,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 2000,
     "has_reels": true,
-    "images": ["/assets/places/stock/exotica_hyderabad_ro_56c32c7e.jpg"]
+    "images": ["/assets/places/stock/exotica_hyderabad_ro_56c32c7e.jpg"],
+    "location": { "lat": 17.4398, "lng": 78.4112 }
   },
   {
     "id": "hyd_d_02",
@@ -184,7 +195,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 2500,
     "has_reels": true,
-    "images": ["/assets/places/stock/olive_bistro_hyderab_ad9362f5.jpg"]
+    "images": ["/assets/places/stock/olive_bistro_hyderab_ad9362f5.jpg"],
+    "location": { "lat": 17.4239, "lng": 78.3998 }
   },
   {
     "id": "hyd_d_03",
@@ -199,7 +211,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 800,
     "has_reels": true,
-    "images": ["/assets/places/stock/roastery_coffee_hous_83398faa.jpg"]
+    "images": ["/assets/places/stock/roastery_coffee_hous_83398faa.jpg"],
+    "location": { "lat": 17.4268, "lng": 78.4143 }
   },
   {
     "id": "hyd_d_04",
@@ -214,7 +227,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 1800,
     "has_reels": true,
-    "images": ["/assets/places/stock/farzi_cafe_hyderabad_c3dcfecd.jpg"]
+    "images": ["/assets/places/stock/farzi_cafe_hyderabad_c3dcfecd.jpg"],
+    "location": { "lat": 17.4321, "lng": 78.4068 }
   },
   {
     "id": "hyd_d_05",
@@ -229,7 +243,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 2200,
     "has_reels": false,
-    "images": ["/assets/places/stock/the_glass_onion_hyde_d92743a4.jpg"]
+    "images": ["/assets/places/stock/the_glass_onion_hyde_d92743a4.jpg"],
+    "location": { "lat": 17.4371, "lng": 78.3752 }
   },
   {
     "id": "hyd_s_01",
@@ -244,7 +259,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 300,
     "has_reels": true,
-    "images": ["/assets/places/stock/cafe_niloufer_hydera_a35c3ae7.jpg"]
+    "images": ["/assets/places/stock/cafe_niloufer_hydera_a35c3ae7.jpg"],
+    "location": { "lat": 17.4082, "lng": 78.4594 }
   },
   {
     "id": "hyd_s_02",
@@ -259,7 +275,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 400,
     "has_reels": false,
-    "images": ["/assets/places/stock/third_wave_coffee_hy_20c3aa7b.jpg"]
+    "images": ["/assets/places/stock/third_wave_coffee_hy_20c3aa7b.jpg"],
+    "location": { "lat": 17.4385, "lng": 78.4102 }
   },
   {
     "id": "hyd_s_03",
@@ -274,7 +291,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 700,
     "has_reels": true,
-    "images": ["/assets/places/stock/conçu_hyderabad_dess_280c6d57.jpg"]
+    "images": ["/assets/places/stock/conçu_hyderabad_dess_280c6d57.jpg"],
+    "location": { "lat": 17.4312, "lng": 78.4015 }
   },
   {
     "id": "hyd_s_04",
@@ -289,7 +307,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 500,
     "has_reels": false,
-    "images": ["/assets/places/stock/taaza_kitchen_hydera_58defc34.jpg"]
+    "images": ["/assets/places/stock/taaza_kitchen_hydera_58defc34.jpg"],
+    "location": { "lat": 17.4471, "lng": 78.3812 }
   },
   {
     "id": "hyd_s_05",
@@ -304,7 +323,8 @@ const testPlaces = [
     "category": "restaurant",
     "budget_for_two": 450,
     "has_reels": true,
-    "images": ["/assets/places/stock/subbayya_gari_hotel__e4291505.jpg"]
+    "images": ["/assets/places/stock/subbayya_gari_hotel__e4291505.jpg"],
+    "location": { "lat": 17.4432, "lng": 78.3789 }
   }
 ];
 
@@ -326,12 +346,38 @@ const privateNotes = {
   // [placeId][userId] = { note, updatedAt }
 };
 
+// Helper to calculate distance between two points in KM
+function getDistanceKm(lat1, lon1, lat2, lon2) {
+  const R = 6371; // Radius of the earth in km
+  const dLat = deg2rad(lat2 - lat1);
+  const dLon = deg2rad(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c; // Distance in km
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI / 180);
+}
+
 // GET /api/places/nearby?lat=&lng=&context=&budget=&distanceKm=&mood=
 router.get('/nearby', (req, res) => {
-  const { context, budget, distanceKm, mood } = req.query;
+  const { lat, lng, context, budget, distanceKm, mood } = req.query;
+  const userLat = parseFloat(lat);
+  const userLng = parseFloat(lng);
 
-  // Basic filtering on mock data; replace with real geo + ranking logic later.
   let results = [...testPlaces];
+
+  // If user provides location, calculate real distances
+  if (!isNaN(userLat) && !isNaN(userLng)) {
+    results = results.map(p => {
+      const dist = getDistanceKm(userLat, userLng, p.location.lat, p.location.lng);
+      return { ...p, distanceKm: parseFloat(dist.toFixed(1)) };
+    });
+  }
 
   if (context) {
     results = results.filter((p) => p.context === context);
