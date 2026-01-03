@@ -178,6 +178,11 @@ function renderPlaceDetails(container, place, reviews, note) {
   const tags = document.createElement('p');
   tags.textContent = (place.tags || []).join(' · ');
 
+  // Add Map Container
+  const mapContainer = document.createElement('div');
+  mapContainer.id = 'placeMap';
+  mapContainer.className = 'map-container';
+
   const reviewsSection = document.createElement('section');
   reviewsSection.innerHTML = '<h3>Public reviews</h3>';
 
@@ -218,8 +223,103 @@ function renderPlaceDetails(container, place, reviews, note) {
   container.appendChild(title);
   container.appendChild(summary);
   container.appendChild(tags);
+  container.appendChild(mapContainer);
   container.appendChild(reviewsSection);
   container.appendChild(notesSection);
+
+  // Initialize the map if Google Maps is loaded
+  if (typeof google !== 'undefined' && google.maps && place.location) {
+    const map = new google.maps.Map(document.getElementById('placeMap'), {
+      center: place.location,
+      zoom: 15,
+      styles: [
+        { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+        { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+        { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+        {
+          featureType: 'administrative.locality',
+          elementType: 'labels.text.fill',
+          stylers: [{ color: '#d59563' }],
+        },
+        {
+          featureType: 'poi',
+          elementType: 'labels.text.fill',
+          stylers: [{ color: '#d59563' }],
+        },
+        {
+          featureType: 'poi.park',
+          elementType: 'geometry',
+          stylers: [{ color: '#263c3f' }],
+        },
+        {
+          featureType: 'poi.park',
+          elementType: 'labels.text.fill',
+          stylers: [{ color: '#6b9a76' }],
+        },
+        {
+          featureType: 'road',
+          elementType: 'geometry',
+          stylers: [{ color: '#38414e' }],
+        },
+        {
+          featureType: 'road',
+          elementType: 'geometry.stroke',
+          stylers: [{ color: '#212a37' }],
+        },
+        {
+          featureType: 'road',
+          elementType: 'labels.text.fill',
+          stylers: [{ color: '#9ca5b3' }],
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'geometry',
+          stylers: [{ color: '#746855' }],
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'geometry.stroke',
+          stylers: [{ color: '#1f2835' }],
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'labels.text.fill',
+          stylers: [{ color: '#f3d19c' }],
+        },
+        {
+          featureType: 'transit',
+          elementType: 'geometry',
+          stylers: [{ color: '#2f3948' }],
+        },
+        {
+          featureType: 'transit.station',
+          elementType: 'labels.text.fill',
+          stylers: [{ color: '#d59563' }],
+        },
+        {
+          featureType: 'water',
+          elementType: 'geometry',
+          stylers: [{ color: '#17263c' }],
+        },
+        {
+          featureType: 'water',
+          elementType: 'labels.text.fill',
+          stylers: [{ color: '#515c6d' }],
+        },
+        {
+          featureType: 'water',
+          elementType: 'labels.text.stroke',
+          stylers: [{ color: '#17263c' }],
+        },
+      ],
+    });
+
+    new google.maps.Marker({
+      position: place.location,
+      map: map,
+      title: place.name,
+    });
+  }
 }
 
 async function savePrivateNote(placeId, noteText) {
