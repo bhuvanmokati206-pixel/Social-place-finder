@@ -324,10 +324,24 @@ function renderPlaceDetails(container, place, reviews, note) {
       ],
     });
 
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: place.location,
       map: map,
       title: place.name,
+    });
+
+    // Add click listener to the map to open Google Maps in a new window
+    map.addListener('click', () => {
+      const { lat, lng } = place.location;
+      const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+      window.open(url, '_blank');
+    });
+
+    // Also add click listener to the marker
+    marker.addListener('click', () => {
+      const { lat, lng } = place.location;
+      const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+      window.open(url, '_blank');
     });
   }
 }
