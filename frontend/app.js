@@ -141,10 +141,14 @@ function renderPlacesList(places) {
 
 async function loadPlaceDetails(placeId) {
   const detailsEl = document.getElementById('placeDetails');
+  if (!detailsEl) return;
   detailsEl.classList.remove('hidden');
   detailsEl.innerHTML = '<p>Loading details…</p>';
 
   try {
+    // Ensure Google Maps is loaded before rendering details (since it contains the map)
+    await loadGoogleMaps();
+
     const [placeRes, reviewsRes, notesRes] = await Promise.all([
       fetch(`${API_BASE_URL}/places/${placeId}`),
       fetch(`${API_BASE_URL}/places/${placeId}/reviews`),
