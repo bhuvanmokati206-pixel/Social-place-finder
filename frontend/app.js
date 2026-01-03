@@ -5,11 +5,17 @@ async function loadGoogleMaps() {
     const res = await fetch(`${API_BASE_URL}/config`);
     const config = await res.json();
     if (config.googleMapsApiKey) {
-      const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${config.googleMapsApiKey}&libraries=places`;
-      script.async = true;
-      script.defer = true;
-      document.head.appendChild(script);
+      if (window.google && window.google.maps) return;
+      
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${config.googleMapsApiKey}&libraries=places&callback=initGoogleMaps`;
+        script.async = true;
+        script.defer = true;
+        window.initGoogleMaps = () => resolve();
+        script.onerror = (e) => reject(e);
+        document.head.appendChild(script);
+      });
     }
   } catch (e) {
     console.error('Failed to load Google Maps config', e);
