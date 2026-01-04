@@ -36,10 +36,15 @@ function setupLoginForm() {
     e.preventDefault();
     const name = document.getElementById('nameInput').value.trim();
     const password = document.getElementById('passwordInput').value.trim();
+    const emailInput = document.createElement('input'); // Mock check if we had email in UI
     
     if (name && password) {
       localStorage.setItem('userName', name);
       localStorage.setItem('userPassword', password);
+      // Let's add email capture since we need it for the profile
+      const email = `${name.toLowerCase().replace(/\s/g, '')}@example.com`;
+      localStorage.setItem('userEmail', email);
+      
       if (loginModal) {
         loginModal.classList.add('hidden');
       }
@@ -389,8 +394,75 @@ function setupDiscoverButton() {
   });
 }
 
+function setupProfilePopup() {
+  const profileBtn = document.querySelector('.profile-button');
+  if (!profileBtn) return;
+
+  // Create Modal if it doesn't exist
+  let profileModal = document.getElementById('profileModal');
+  if (!profileModal) {
+    profileModal = document.createElement('div');
+    profileModal.id = 'profileModal';
+    profileModal.className = 'profile-modal';
+    document.body.appendChild(profileModal);
+  }
+
+  profileBtn.addEventListener('click', () => {
+    const userName = localStorage.getItem('userName') || 'Guest';
+    const userEmail = localStorage.getItem('userEmail') || 'No email provided';
+    
+    // Count user notes as proxy for reviews for now
+    const notesKey = 'socialPlacesUserId';
+    const userId = localStorage.getItem(notesKey);
+    // In a real app we'd fetch actual reviews, here we just show a placeholder or count
+    const reviewsCount = 0; 
+
+    profileModal.innerHTML = `
+      <div class="profile-card">
+        <button class="close-profile">&times;</button>
+        <div class="profile-avatar">👤</div>
+        <div class="profile-info">
+          <h2>${userName}</h2>
+          <p>${userEmail}</p>
+        </div>
+        <div class="profile-menu">
+          <div class="menu-item">
+            <span>📝</span> My Reviews (${reviewsCount})
+          </div>
+          <div class="menu-item">
+            <span>⚙️</span> Settings
+          </div>
+          <div class="menu-item logout">
+            <span>🚪</span> Logout
+          </div>
+        </div>
+      </div>
+    `;
+
+    profileModal.classList.add('active');
+
+    // Close logic
+    profileModal.querySelector('.close-profile').onclick = () => {
+      profileModal.classList.remove('active');
+    };
+
+    profileModal.onclick = (e) => {
+      if (e.target === profileModal) profileModal.classList.remove('active');
+    };
+
+    // Logout logic
+    profileModal.querySelector('.logout').onclick = () => {
+      localStorage.removeItem('userName');
+      localStorage.removeItem('userPassword');
+      localStorage.removeItem('userEmail');
+      window.location.href = 'index.html';
+    };
+  });
+}
+
 function init() {
   loadGoogleMaps();
+  setupProfilePopup();
   // Check login status and show/hide login modal
   const loginModal = document.getElementById('loginModal');
   if (isLoggedIn()) {
