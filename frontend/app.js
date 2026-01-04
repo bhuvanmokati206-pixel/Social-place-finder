@@ -210,6 +210,33 @@ function renderPlaceDetails(container, place, reviews, note) {
     </button>
   `;
 
+  // Menu Modal logic for "Over The Moon Brew"
+  if (place.name.includes('Over The Moon Brew')) {
+    const menuBtn = menuWrapper.querySelector('.view-menu-button');
+    menuBtn.addEventListener('click', () => {
+      let menuModal = document.getElementById('menuModal');
+      if (!menuModal) {
+        menuModal = document.createElement('div');
+        menuModal.id = 'menuModal';
+        menuModal.className = 'profile-modal'; // Reuse modal styling
+        document.body.appendChild(menuModal);
+      }
+      menuModal.innerHTML = `
+        <div class="profile-card" style="max-width: 600px; padding: 1.5rem;">
+          <button class="close-profile">&times;</button>
+          <h2 style="margin-bottom: 1.5rem;">Over The Moon Brew Menu</h2>
+          <div style="display: flex; flex-direction: column; gap: 1rem; max-height: 70vh; overflow-y: auto;">
+            <img src="attached_assets/3eb01bae168ff3fdfa066a89d8b336f1_1767496772549.avif" style="width: 100%; border-radius: 0.5rem;" alt="Menu Page 1">
+            <img src="attached_assets/522c7d015c46a6aa5aef8f3db999019a_1767496790847.avif" style="width: 100%; border-radius: 0.5rem;" alt="Menu Page 2">
+          </div>
+        </div>
+      `;
+      menuModal.classList.add('active');
+      menuModal.querySelector('.close-profile').onclick = () => menuModal.classList.remove('active');
+      menuModal.onclick = (e) => { if (e.target === menuModal) menuModal.classList.remove('active'); };
+    });
+  }
+
   // Private Notes Section
   const notesContainer = document.createElement('div');
   notesContainer.className = 'private-notes-container';
