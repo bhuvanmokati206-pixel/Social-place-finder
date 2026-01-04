@@ -483,9 +483,22 @@ function setupProfilePopup() {
   });
 }
 
+function setupFilterButton() {
+  const filterBtn = document.getElementById('filterBtn');
+  const controls = document.querySelector('.controls');
+  if (!filterBtn || !controls) return;
+
+  filterBtn.addEventListener('click', () => {
+    controls.classList.toggle('controls--hidden');
+    // If on results page, maybe scroll to top to see filters
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 function init() {
   loadGoogleMaps();
   setupProfilePopup();
+  setupFilterButton();
   // Check login status and show/hide login modal
   const loginModal = document.getElementById('loginModal');
   if (isLoggedIn()) {

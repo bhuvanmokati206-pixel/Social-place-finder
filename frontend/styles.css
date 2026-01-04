@@ -57,6 +57,33 @@ body::before {
   justify-content: center;
   transition: box-shadow 0.15s ease, transform 0.08s ease;
   box-shadow: 0 0 18px rgba(249, 115, 22, 0.7);
+  z-index: 100;
+}
+
+.filter-header-button {
+  position: absolute;
+  top: 1rem;
+  right: 5rem; /* Positioned left of profile button (1rem + 50px + gap) */
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  border: 2px solid rgba(249, 115, 22, 0.8);
+  background: radial-gradient(circle at top, rgba(249, 115, 22, 0.18), transparent 60%),
+    #020617;
+  color: #f9fafb;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.15s ease, transform 0.08s ease;
+  box-shadow: 0 0 18px rgba(249, 115, 22, 0.7);
+  z-index: 100;
+}
+
+.filter-header-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px rgba(249, 115, 22, 0.9);
 }
 
 .profile-button:hover {
