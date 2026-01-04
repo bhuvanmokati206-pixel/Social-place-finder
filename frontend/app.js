@@ -177,74 +177,98 @@ async function loadPlaceDetails(placeId) {
 function renderPlaceDetails(container, place, reviews, note) {
   container.innerHTML = '';
 
-  const title = document.createElement('h2');
-  title.textContent = place.name;
+  // Header Section
+  const header = document.createElement('div');
+  header.className = 'place-header-centered';
+  header.innerHTML = `
+    <h1 class="place-title-new">${place.name}</h1>
+    <div class="place-price-new">Average Price: ₹${place.budget_for_two || 1000}</div>
+  `;
 
-  const summary = document.createElement('p');
-  summary.textContent = `${place.type} · ${place.rating} ★ · ${
-    place.costRange || place.budget || ''
-  } · ${place.distanceKm ?? '?'} km away`;
+  // Gallery Section
+  const gallery = document.createElement('div');
+  gallery.className = 'image-gallery-container';
+  const images = [
+    'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80'
+  ];
+  gallery.innerHTML = images.map(img => `<div class="gallery-image" style="background-image: url('${img}')"></div>`).join('');
 
-  const tags = document.createElement('p');
-  tags.textContent = (place.tags || []).join(' · ');
+  // View Menu Section
+  const menuWrapper = document.createElement('div');
+  menuWrapper.className = 'view-menu-wrapper';
+  menuWrapper.innerHTML = `
+    <button class="view-menu-button">
+      <span>🍴</span> View Menu
+    </button>
+  `;
 
-  // Add Map Container
-  const mapContainer = document.createElement('div');
-  mapContainer.id = 'placeMap';
-  mapContainer.className = 'map-container';
-
-  const reviewsSection = document.createElement('section');
-  reviewsSection.innerHTML = '<h3>Public reviews</h3>';
-
-  if (!reviews.length) {
-    const empty = document.createElement('p');
-    empty.textContent = 'No reviews yet. Be the first to share your experience.';
-    reviewsSection.appendChild(empty);
-  } else {
-    for (const r of reviews) {
-      const p = document.createElement('p');
-      p.textContent = `${r.rating} ★ – ${r.comment || ''}`;
-      reviewsSection.appendChild(p);
-    }
-  }
-
-  const notesSection = document.createElement('section');
-  notesSection.innerHTML = '<h3>Your private notes</h3>';
+  // Private Notes Section
+  const notesContainer = document.createElement('div');
+  notesContainer.className = 'private-notes-container';
+  notesContainer.innerHTML = '<h3>Your private notes</h3>';
 
   const textarea = document.createElement('textarea');
-  textarea.className = 'notes-textarea';
+  textarea.className = 'notes-textarea-new';
   textarea.placeholder = 'Add your own memory, tip, or reminder about this place. Only you can see this.';
   textarea.value = note?.note || '';
 
-  const actions = document.createElement('div');
-  actions.className = 'notes-actions';
-
   const saveButton = document.createElement('button');
-  saveButton.className = 'secondary-button';
+  saveButton.className = 'primary-button';
+  saveButton.style.width = 'auto';
+  saveButton.style.padding = '0.75rem 2rem';
   saveButton.textContent = 'Save note';
   saveButton.addEventListener('click', async () => {
     await savePrivateNote(place.id, textarea.value);
   });
 
-  actions.appendChild(saveButton);
-  notesSection.appendChild(textarea);
-  notesSection.appendChild(actions);
+  notesContainer.appendChild(textarea);
+  notesContainer.appendChild(saveButton);
 
-  container.appendChild(title);
-  container.appendChild(summary);
-  container.appendChild(tags);
-  container.appendChild(mapContainer);
-  container.appendChild(reviewsSection);
-  container.appendChild(notesSection);
+  // Map Section (At the last)
+  const mapSection = document.createElement('div');
+  mapSection.style.position = 'relative';
+  mapSection.style.marginTop = '2rem';
+  
+  const mapEl = document.createElement('div');
+  mapEl.id = 'placeMap';
+  mapEl.className = 'map-container-new';
+  
+  const locationBarWrapper = document.createElement('div');
+  locationBarWrapper.className = 'location-bar-wrapper';
+  locationBarWrapper.style.position = 'absolute';
+  locationBarWrapper.style.bottom = '20px';
+  locationBarWrapper.style.left = '0';
+  locationBarWrapper.style.right = '0';
+  locationBarWrapper.style.zIndex = '10';
+  
+  locationBarWrapper.innerHTML = `
+    <div class="location-bar">
+      <span class="location-bar-icon">📍</span>
+      <span>${place.name} - Hyderabad</span>
+    </div>
+  `;
+
+  mapSection.appendChild(mapEl);
+  mapSection.appendChild(locationBarWrapper);
+
+  container.appendChild(header);
+  container.appendChild(gallery);
+  container.appendChild(menuWrapper);
+  container.appendChild(notesContainer);
+  container.appendChild(mapSection);
 
   // Initialize the map if Google Maps is loaded
   if (typeof google !== 'undefined' && google.maps && place.location) {
     const map = new google.maps.Map(document.getElementById('placeMap'), {
       center: place.location,
       zoom: 15,
+      disableDefaultUI: true,
       styles: [
-        { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
-        { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+        { elementType: 'geometry', stylers: [{ color: '#1a1c1e' }] },
+        { elementType: 'labels.text.stroke', stylers: [{ color: '#1a1c1e' }] },
         { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
         {
           featureType: 'administrative.locality',
@@ -259,67 +283,17 @@ function renderPlaceDetails(container, place, reviews, note) {
         {
           featureType: 'poi.park',
           elementType: 'geometry',
-          stylers: [{ color: '#263c3f' }],
-        },
-        {
-          featureType: 'poi.park',
-          elementType: 'labels.text.fill',
-          stylers: [{ color: '#6b9a76' }],
+          stylers: [{ color: '#1c282a' }],
         },
         {
           featureType: 'road',
           elementType: 'geometry',
-          stylers: [{ color: '#38414e' }],
-        },
-        {
-          featureType: 'road',
-          elementType: 'geometry.stroke',
-          stylers: [{ color: '#212a37' }],
-        },
-        {
-          featureType: 'road',
-          elementType: 'labels.text.fill',
-          stylers: [{ color: '#9ca5b3' }],
-        },
-        {
-          featureType: 'road.highway',
-          elementType: 'geometry',
-          stylers: [{ color: '#746855' }],
-        },
-        {
-          featureType: 'road.highway',
-          elementType: 'geometry.stroke',
-          stylers: [{ color: '#1f2835' }],
-        },
-        {
-          featureType: 'road.highway',
-          elementType: 'labels.text.fill',
-          stylers: [{ color: '#f3d19c' }],
-        },
-        {
-          featureType: 'transit',
-          elementType: 'geometry',
-          stylers: [{ color: '#2f3948' }],
-        },
-        {
-          featureType: 'transit.station',
-          elementType: 'labels.text.fill',
-          stylers: [{ color: '#d59563' }],
+          stylers: [{ color: '#2b2d30' }],
         },
         {
           featureType: 'water',
           elementType: 'geometry',
-          stylers: [{ color: '#17263c' }],
-        },
-        {
-          featureType: 'water',
-          elementType: 'labels.text.fill',
-          stylers: [{ color: '#515c6d' }],
-        },
-        {
-          featureType: 'water',
-          elementType: 'labels.text.stroke',
-          stylers: [{ color: '#17263c' }],
+          stylers: [{ color: '#0f172a' }],
         },
       ],
     });
@@ -337,7 +311,6 @@ function renderPlaceDetails(container, place, reviews, note) {
       window.open(url, '_blank');
     });
 
-    // Also add click listener to the marker
     marker.addListener('click', () => {
       const { lat, lng } = place.location;
       const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
