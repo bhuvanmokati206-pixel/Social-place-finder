@@ -214,26 +214,22 @@ function renderPlaceDetails(container, place, reviews, note) {
   if (place.name.includes('Over The Moon Brew')) {
     const menuBtn = menuWrapper.querySelector('.view-menu-button');
     menuBtn.addEventListener('click', () => {
-      let menuModal = document.getElementById('menuModal');
-      if (!menuModal) {
-        menuModal = document.createElement('div');
-        menuModal.id = 'menuModal';
-        menuModal.className = 'profile-modal'; // Reuse modal styling
-        document.body.appendChild(menuModal);
+      // Directly open images in a simple modal overlay
+      let menuOverlay = document.getElementById('menuOverlay');
+      if (!menuOverlay) {
+        menuOverlay = document.createElement('div');
+        menuOverlay.id = 'menuOverlay';
+        menuOverlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:3000;display:flex;flex-direction:column;align-items:center;overflow-y:auto;padding:20px;';
+        document.body.appendChild(menuOverlay);
       }
-      menuModal.innerHTML = `
-        <div class="profile-card" style="max-width: 600px; padding: 1.5rem;">
-          <button class="close-profile">&times;</button>
-          <h2 style="margin-bottom: 1.5rem;">Over The Moon Brew Menu</h2>
-          <div style="display: flex; flex-direction: column; gap: 1rem; max-height: 70vh; overflow-y: auto;">
-            <img src="attached_assets/3eb01bae168ff3fdfa066a89d8b336f1_1767496772549.avif" style="width: 100%; border-radius: 0.5rem;" alt="Menu Page 1">
-            <img src="attached_assets/522c7d015c46a6aa5aef8f3db999019a_1767496790847.avif" style="width: 100%; border-radius: 0.5rem;" alt="Menu Page 2">
-          </div>
-        </div>
+      menuOverlay.innerHTML = `
+        <button style="position:fixed;top:20px;right:20px;background:none;border:none;color:white;font-size:40px;cursor:pointer;z-index:3001;">&times;</button>
+        <img src="attached_assets/3eb01bae168ff3fdfa066a89d8b336f1_1767496772549.avif" style="width:100%;max-width:800px;margin-bottom:20px;border-radius:8px;">
+        <img src="attached_assets/522c7d015c46a6aa5aef8f3db999019a_1767496790847.avif" style="width:100%;max-width:800px;border-radius:8px;">
       `;
-      menuModal.classList.add('active');
-      menuModal.querySelector('.close-profile').onclick = () => menuModal.classList.remove('active');
-      menuModal.onclick = (e) => { if (e.target === menuModal) menuModal.classList.remove('active'); };
+      menuOverlay.style.display = 'flex';
+      menuOverlay.querySelector('button').onclick = () => menuOverlay.style.display = 'none';
+      menuOverlay.onclick = (e) => { if (e.target === menuOverlay) menuOverlay.style.display = 'none'; };
     });
   }
 
