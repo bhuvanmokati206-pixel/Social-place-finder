@@ -523,6 +523,8 @@ input[type='email']:focus {
 .location-bar-wrapper {
   padding: 0 1rem;
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .location-bar {
@@ -538,6 +540,7 @@ input[type='email']:focus {
   box-shadow: 0 0 25px rgba(249, 115, 22, 0.1);
   color: #fff;
   font-weight: 500;
+  width: fit-content;
 }
 
 .location-bar-icon {
